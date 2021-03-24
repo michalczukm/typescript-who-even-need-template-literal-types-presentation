@@ -19,7 +19,7 @@ Should be available soon.
 
 ## Presentation
 
-[Embedded on the page - click](./index.html)
+[Embedded on the page - click](https://michalczukm.github.io/typescript-who-even-need-template-literal-types-presentation/)
 
 ## About me
 
