@@ -20,3 +20,7 @@ Should be available soon.
 ## Presentation
 
 [Embedded on the page - click](./index.html)
+
+## About me
+
+[michalczukm.xyz](https://michalczukm.xyz)
