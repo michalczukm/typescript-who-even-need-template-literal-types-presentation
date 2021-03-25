@@ -7,6 +7,8 @@ type BaseColor = 'gray' | 'red' | 'yellow' | 'green';
 
 type Variant = 50 | 100 | 200 | 300 | 400;
 
+// 'gray-50' | 'gray-100' | 'gray-200' ...
+
 type TailwindColor = `${BaseColor}-${Variant}`;
 
 const color: TailwindColor = 'red-300';
@@ -17,11 +19,14 @@ const color: TailwindColor = 'red-300';
  */
 import React, { FunctionComponent } from 'react';
 
+type MySystemColor = `${BaseColor}-${Variant}`;
+
 type ButtonProps = {
-  color: `${BaseColor}-${Variant}`;
-  bgColor: `${BaseColor}-${Variant}`;
-  space: `${number}px`;
+  color?: MySystemColor;
+  bgColor?: MySystemColor;
+  space?: `${number}px`;
 };
+
 
 const FancyDesignSystemButton: FunctionComponent<ButtonProps> = ({
   bgColor,
@@ -32,6 +37,19 @@ const FancyDesignSystemButton: FunctionComponent<ButtonProps> = ({
   <button style={{ color, backgroundColor: bgColor, margin: space }}>
     {children}
   </button>
+);
+
+const Example = () => (
+  <>
+    {/* this usage won't compile */}
+    <FancyDesignSystemButton color='very blue please' space='deep'>
+      click
+    </FancyDesignSystemButton>
+    {/* this one is ✅ */}
+    <FancyDesignSystemButton color='green-400' space='5px'>
+      click
+    </FancyDesignSystemButton>
+  </>
 );
 
 export {};

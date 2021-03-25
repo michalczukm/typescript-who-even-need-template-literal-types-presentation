@@ -24,6 +24,7 @@ type ChangeLog<T> = {
 // type OnlyValues<T> = Omit<T, 'id'>;
 // PS we can also do it in `FieldLog`
 // [K in keyof Omit<T, 'id'> as `${string & K}_${'old' | 'new'}`]?: string;
+
 type PatientChangeLog = ChangeLog<PatientEntity>;
 
 /**
