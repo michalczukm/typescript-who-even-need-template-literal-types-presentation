@@ -1,6 +1,6 @@
 /**
  * Example 4: Generate multiple fields per each one while mapping type
- * 
+ *
  * Imagine you have to create table which logs each change operation
  * on every value - full auditable, always available
  */
