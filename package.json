@@ -3,9 +3,6 @@
   "private": true,
   "version": "1.0.0",
   "description": "👋 This is code for \"Template Literal types in Typescript - who even need that?\" presentation",
-  "directories": {
-    "example": "examples"
-  },
   "dependencies": {},
   "devDependencies": {
     "@angular/core": "^11.2.7",

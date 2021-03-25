@@ -2,7 +2,7 @@
 
 👋 This is code for "Template Literal types in Typescript - who even need that?" presentation
 
-All files with code samples can be found in [./examples](./examples)
+All files with code samples can be found in [./src](./src)
 
 ## Description
 
