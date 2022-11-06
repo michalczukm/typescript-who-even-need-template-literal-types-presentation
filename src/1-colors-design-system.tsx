@@ -25,16 +25,25 @@ type ButtonProps = {
   color?: MySystemColor;
   bgColor?: MySystemColor;
   space?: `${number}px`;
+  frame?: `${number}${'px' | 'pt' | 'pc' | 'cm' | 'mm' | 'Q' | 'in'}`;
 };
-
 
 const FancyDesignSystemButton: FunctionComponent<ButtonProps> = ({
   bgColor,
   color,
   space,
+  frame,
   children,
 }) => (
-  <button style={{ color, backgroundColor: bgColor, margin: space }}>
+  <button
+    style={{
+      color,
+      backgroundColor: bgColor,
+      margin: space,
+      borderWidth: frame,
+      borderColor: 'red',
+    }}
+  >
     {children}
   </button>
 );

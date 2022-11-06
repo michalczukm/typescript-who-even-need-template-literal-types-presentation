@@ -12,10 +12,9 @@ type User = {
 
 // Lets create handled which will map this type to new one
 // and extend it with `Changed` fields, which are Angular's event emitters.
-type Handlers<T> = T &
-  {
-    [Key in keyof T as `${string & Key}Changed`]: EventEmitter<T[Key]>;
-  };
+type Handlers<T> = T & {
+  [Key in keyof T as `${string & Key}Changed`]: EventEmitter<T[Key]>;
+};
 
 type UserWithHandlers = Handlers<User>;
 
