@@ -2,7 +2,7 @@
 
 👋 This is code for "Template Literal types in Typescript - who even need that?" presentation
 
-All files with code samples can be found in [./src](./src)
+All files with code samples can be found in [./code-examples](./code-examples)
 
 ## Description
 
@@ -19,7 +19,7 @@ Should be available soon.
 
 ## Presentation
 
-[Embedded on the page - click](https://michalczukm.github.io/typescript-who-even-need-template-literal-types-presentation/)
+[Check it online - click](https://michalczukm.github.io/typescript-who-even-need-template-literal-types-presentation/)
 
 ## About me
 
