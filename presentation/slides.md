@@ -35,7 +35,7 @@ image: 'ts-4-1.png'
 
 # Typescript 4.1
 
-## November 2022
+## November 2020
 
 Minor release but with **big power**.
 
@@ -84,22 +84,22 @@ const color: TailwindColor = 'red-300';
 
 # Design system case
 
-<LinkToPlayground :href="'https://example.com'" />
+<LinkToPlayground href="https://tsplay.dev/W4nl7N" />
 
 <Scrollable>
 
-```ts {3-5|7-12|14-32|34-46|all}
+```ts {3-5|6-12|13-32|33-46|all}
 import React from 'react';
 
 type BaseColor = 'gray' | 'red' | 'yellow' | 'green';
 type Variant = 50 | 100 | 200 | 300 | 400;
-type MySystemColor = `${BaseColor}-${Variant}`;
 
 type ButtonProps = {
-  color?: MySystemColor;
-  bgColor?: MySystemColor;
+  color?: `${BaseColor}-${Variant}`;
+  bgColor?: `${BaseColor}-${Variant}`;
   space?: `${number}px`;
   frame?: `${number}${'px' | 'pt' | 'pc' | 'cm' | 'mm' | 'Q' | 'in'}`;
+  children: React.ReactNode
 };
 
 const FancyDesignSystemButton = ({
