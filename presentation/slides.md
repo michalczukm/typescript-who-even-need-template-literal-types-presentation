@@ -45,9 +45,12 @@ Template Literal Types first introduced.
 layout: quote
 ---
 
-# "Template literal types build on <span class="text-teal-700">string literal types</span>, and have the ability to expand into many strings via unions."
+# "Template literal types is build on <span class="text-teal-700">string literal types</span>, and have the ability to expand into many strings via unions."
 
 (I think it was in docs)
+
+[#TODO]: <> (find source of this quote)
+
 
 ---
 layout: quote
@@ -56,6 +59,9 @@ layout: quote
 # "They have the "same" syntax as <span class="text-teal-700">template literal strings in JavaScript</span>, but are used in type positions. "
 
 (Same here - I think it was in docs)
+
+[#TODO]: <> (find source of this quote)
+
 
 ---
 layout: image-center
@@ -66,7 +72,7 @@ First announcement
 
 ---
 
-# Tailwind case
+# <twemoji-nail-polish/> Tailwind case
 
 <LinkToPlayground :href="'https://example.com'" />
 
@@ -80,9 +86,10 @@ type TailwindColor = `${BaseColor}-${Variant}`;
 const color: TailwindColor = 'red-300';
 ```
 
+
 ---
 
-# Design system case
+# <twemoji-artist-palette/> Design system case
 
 <LinkToPlayground href="https://tsplay.dev/W4nl7N" />
 
@@ -139,6 +146,7 @@ const Example = () => (
 
 </Scrollable>
 
+
 ---
 layout: iframe-right
 url: https://tsplay.dev/W4nM7N
@@ -186,7 +194,8 @@ Heavy uses Template Literal Types.
 layout: fact
 ---
 
-# We got some useful examples
+# We got some useful examples!
+
 
 ---
 layout: image-right
@@ -206,7 +215,7 @@ url: https://tsplay.dev/WzPgQN
 
 ---
 layout: image-right
-image: https://koskimas.github.io/kysely/assets/demo.gif
+image: https://github.com/kysely-org/kysely/blob/master/assets/demo.gif?raw=true
 ---
 
 # Or Kysely
@@ -253,15 +262,16 @@ Talking head @ [Śniadanie z Programowaniem](https://www.youtube.com/c/%C5%9Ania
 layout: section
 ---
 
-# Where I can use Template Literal Types?
+# <twemoji-thinking-face/> Where I can use Template Literal Types?
 
 At the end of the day, they are just types!
+
 
 ---
 layout: two-cols-narrow
 ---
 
-# Object key
+# <twemoji-key/> Object key
 
 Since TS v.4.4
 
@@ -303,11 +313,12 @@ const configurationWithOptions: ConfigurationWithOptions = {
 
 </Scrollable>
 
+
 ---
 layout: two-cols-narrow
 ---
 
-# Object key
+# <twemoji-key/> Object key
 
 Since TS v.4.4
 
@@ -349,11 +360,12 @@ const configurationWithOptions: ConfigurationWithOptions = {
 
 </Scrollable>
 
+
 ---
 layout: two-cols-narrow
 ---
 
-# Discriminator
+# <twemoji-call-me-hand/> Discriminator
 
 In discriminator union type.
 
@@ -411,11 +423,12 @@ const handler = (response: Success | Error) => {
 
 </Scrollable>
 
+
 ---
 layout: two-cols-narrow
 ---
 
-# Return type ... kind of dynamic
+# <twemoji-snake/> Return type ... kind of dynamic
 
 "dynamic", nice that it checks the constraint now!
 
@@ -451,19 +464,21 @@ const makeSuccessTyped = (
 </div>
 </div>
 
+
 ---
 layout: section
 ---
 
-# What about maped types?
+# <twemoji-face-with-monocle/> What about maped types?
 
-Oh, works indeed!
+Here goes the fun part!
+
 
 ---
 layout: two-cols
 ---
 
-# Did you missed Angular?
+# <logos-angular-icon/> Did you missed Angular?
 
 ```ts {3-8|9-12|all}
 declare interface EventEmitter<T> {}
@@ -482,11 +497,12 @@ type Handlers<T> = T & {
 type UserWithHandlers = Handlers<User>;
 ```
 
+
 ---
 layout: two-cols
 ---
 
-# Did you missed Angular?
+# <logos-angular-icon/> Did you missed Angular?
 
 ```ts {monaco}
 declare interface EventEmitter<T> {}
@@ -535,11 +551,12 @@ class UserComponent implements UserWithHandlers {
 
 </div>
 
+
 ---
 layout: two-cols-narrow
 ---
 
-# Let's do the opposite
+# <logos-angular-icon/> Let's do the opposite
 
 Take all fields which have `Changed` in name.
 
@@ -550,7 +567,7 @@ Take all fields which have `Changed` in name.
 
 ::right::
 
-```ts {1-8|10-14|16|18-22}
+```ts {1-8|10|11-}
 type User = {
   name: string;
   nameChanged: (name: string) => void;
@@ -560,13 +577,7 @@ type User = {
   ageChanged: (age: number) => void;
 };
 
-type KeyFulfillConstraint<T, TConstraint> = {
-  [OnlyStringKey in {
-    [Key in keyof T]: Key extends TConstraint ? Key : never;
-  }[keyof T]]: T[OnlyStringKey];
-};
-
-type UserHandlers = KeyFulfillConstraint<User, `${string}Changed`>;
+type UserHandlers = Pick<User, `${string}Changed` & keyof User>
 
 const userHandlers: UserHandlers = {
   nameChanged: (name) => {},
@@ -576,11 +587,12 @@ const userHandlers: UserHandlers = {
 
 ```
 
+
 ---
 layout: two-cols-narrow
 ---
 
-# Let's do the opposite
+# <logos-angular-icon/> Let's do the opposite
 
 Take all fields which have `Changed` in name.
 
@@ -617,11 +629,12 @@ const userHandlers: UserHandlers = {
 
 ```
 
+
 ---
 layout: two-cols
 ---
 
-# Change log
+# <twemoji-health-worker/> Change log
 
 Imagine you have to model structure with `history tables` / `change log` tables.
 
@@ -633,11 +646,12 @@ Each change should have log with `new` & `old` field value.
 
 ![db-1-r](/db-1-r.png)
 
+
 ---
 layout: two-cols
 ---
 
-# Change log table
+# <twemoji-health-worker/> Change log table
 
 ![db-2-l](/db-2-l.png)
 
@@ -650,13 +664,14 @@ layout: two-cols
 layout: center
 ---
 
-# Change log, but shit got real
+# <twemoji-health-worker/> Change log, but shit got real
 
 <img src="/db-3.png" alt="db-3" width="600"/>
 
+
 ---
 
-# Change log in types
+# <twemoji-health-worker/> Change log in types
 
 ```ts {1-6|8-12|13|16}
 type PatientEntity = {
@@ -677,9 +692,10 @@ type ChangeLog<T> = {
 type PatientChangeLog = ChangeLog<PatientEntity>;
 ```
 
+
 ---
 
-# Change log in types
+# <twemoji-health-worker/> Change log in types
 
 ```ts {monaco}
 type PatientEntity = {
@@ -708,13 +724,15 @@ const patientLog: ChangeLog<PatientEntity> = {
 };
 ```
 
+
 ---
 layout: section
 ---
 
-# Unpacking / Unwrapping
+# <twemoji-package/> Unpacking / Unwrapping
 
 We can read components from Template Literal Type, and it is good.
+
 
 ---
 layout: image-right
@@ -822,13 +840,11 @@ type UnpackResource<T> =
     : never;
 type ResourceUnpacked = UnpackResource<Ari>;
 
-
 type UnpackResourceId<T> =
   T extends `ari:${string}:${string}::${string}/${infer TResource}`
     ? TResource
     : never;
 type ResourceIdUnpacked = UnpackResourceId<Ari>;
-
 
 type UnpackAll<T> =
   T extends `ari:${infer TEnvironment}:${infer TOwner}::${infer TResource}/${string}`
@@ -843,7 +859,7 @@ type UnpackedAll = UnpackAll<Ari>;
 layout: two-cols
 ---
 
-# Unpacking legacy
+# Legacy
 
 <LinkToPlayground href="https://tsplay.dev/mArM4W" />
 
@@ -860,7 +876,19 @@ type Success = {
     | 'ProcessSuccess';
   body: string;
 };
+```
 
+::right::
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+```ts
 type Error = {
   type: 
     | 'HttpError' 
@@ -871,7 +899,11 @@ type Error = {
 };
 ```
 
-::right::
+---
+
+# Unpacking legacy
+
+<LinkToPlayground href="https://tsplay.dev/mArM4W" />
 
 <Scrollable>
 
@@ -936,16 +968,28 @@ Those ones `/api/users/:userId/posts/:postId`
 
 <Tweet id="1301707026507198464" />
 
----
-layout: iframe-right
-url: https://tsplay.dev/WKO28W
+
 ---
 
 # Have you missed express?
 
 Handle paths
 
-<LinkToPlaygroundInline href="https://tsplay.dev/WKO28W" />
+```ts {monaco}
+type ExtractRouteParams<T extends string> =
+  string extends T
+  ? Record<string, string>
+  : T extends `${infer Start}:${infer Param}/${infer Rest}`
+  ? {[k in Param | keyof ExtractRouteParams<Rest>]: string}
+  : T extends `${infer Start}:${infer Param}`
+  ? {[k in Param]: string}
+  : {};
+
+type PostParams = ExtractRouteParams<'/posts/:postId'>;
+
+const endpointUrl = '/posts/:postId/:commentId' as const
+type CommentInPostParams = ExtractRouteParams<typeof endpointUrl>;
+```
 
 ---
 layout: section
@@ -953,7 +997,7 @@ layout: section
 
 # Hitting the limits
 
-OFC sky is the limit
+OFC sky is the limit 😜
 
 ---
 

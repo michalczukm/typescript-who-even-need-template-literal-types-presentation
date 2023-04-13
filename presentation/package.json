@@ -1,15 +1,23 @@
 {
   "name": "who-even-need-template-literal-types",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "slidev build",
     "dev": "slidev --open",
     "export": "slidev export"
   },
   "dependencies": {
-    "@slidev/cli": "^0.36.10",
+    "@slidev/cli": "^0.40.10",
     "@slidev/theme-apple-basic": "^0.20.0",
     "@slidev/theme-default": "*",
     "@slidev/theme-seriph": "*"
+  },
+  "devDependencies": {
+    "@angular/core": "^15.2.7",
+    "@iconify-json/logos": "^1.1.24",
+    "@iconify-json/twemoji": "^1.1.11",
+    "@iconify-json/uim": "^1.1.5",
+    "@types/react": "^18.0.35"
   }
 }
