@@ -1102,13 +1102,13 @@ layout: two-cols
 
 
 <div class="flex h-full items-center">
-  <img src="next-hrefs.png" class="m-auto" v-bind="props"/>
+  <img src="/next-hrefs.png" class="m-auto" v-bind="props"/>
 </div>
 
 ::right::
 
 <div class="flex h-full items-center">
-  <img v-click src="next-code-generated.png" v-bind="props"/>
+  <img v-click src="/next-code-generated.png" v-bind="props"/>
 </div>
 
 ---
