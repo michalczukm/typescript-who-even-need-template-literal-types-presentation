@@ -230,7 +230,7 @@ The SQL query builder.
 layout: two-cols-narrow
 ---
 
-# <twemoji-link/> Next.js Statically Typed Links
+# <logos-nextjs-icon/> Next.js Statically Typed Links
 
 Type safe hrefs in app.
 
@@ -1065,6 +1065,48 @@ type params = Pipe<
 layout: section
 ---
 
+# <logos-nextjs-icon/> How Next.js Statically Typed Links works?
+
+Speaking of urls unpacking.
+
+
+---
+layout: image-right
+image: next-dir.png
+---
+
+# <logos-nextjs-icon/> Config and app
+
+```ts
+const nextConfig = {
+  experimental: {
+    appDir: true,
+    typedRoutes: true,
+  },
+}
+```
+
+More info in [<logos-nextjs-icon/> docs](https://beta.nextjs.org/docs/configuring/typescript#statically-typed-links)
+
+---
+layout: two-cols
+---
+
+
+<div class="flex h-full items-center">
+  <img src="next-hrefs.png" class="m-auto" v-bind="props"/>
+</div>
+
+::right::
+
+<div class="flex h-full items-center">
+  <img v-click src="next-code-generated.png" v-bind="props"/>
+</div>
+
+---
+layout: section
+---
+
 # Hitting the limits
 
 OFC sky is the limit 😜
@@ -1189,7 +1231,6 @@ layout: two-cols
 ::right::
 
 * Examples which you can actually use
-  * https://beta.nextjs.org/docs/configuring/typescript#statically-typed-links
   * https://hasura.io/blog/how-typescript-template-literal-types-helped-us-with-multiple-database-support/
   * https://github.com/gvergnaud/hotscript
   * https://github.com/Lionad-Morotar/Anysort
@@ -1197,6 +1238,9 @@ layout: two-cols
   * https://github.com/dotansimha/graphql-typed-ast
   * https://github.com/nanostores/router
   * https://twitter.com/danvdk/status/1301707026507198464
+* Next.js statically typed links
+  * https://beta.nextjs.org/docs/configuring/typescript#statically-typed-links
+  * https://twitter.com/shuding_/status/1620137501192253440
 * Crazy examples
   * https://twitter.com/buildsghost/status/1301976526603206657
   * https://twitter.com/mikeryandev/status/1308472279010025477
