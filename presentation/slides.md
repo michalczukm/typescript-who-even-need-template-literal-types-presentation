@@ -152,7 +152,7 @@ layout: iframe-right
 url: https://tsplay.dev/W4nM7N
 ---
 
-# A lot of interesting exmaples were created
+# <twemoji-speak-no-evil-monkey/> Interesting examples were created
 
 Like ELIZA bot in types system
 <LinkToPlaygroundInline href="https://tsplay.dev/W4nM7N" />
@@ -164,7 +164,7 @@ But not very useful one.
 layout: two-cols-narrow
 ---
 
-# Another great one
+# <twemoji-green-square/> Yet another
 
 Why not Wordle.
 
@@ -178,17 +178,19 @@ To be fair - this was February 2022 challenge.
   <Tweet id="1490631626828746753" />
 </Scrollable>
 
+
 ---
 layout: iframe-right
 url: https://tsplay.dev/lWY33N
 ---
 
-# Famous ts-sql
+# <twemoji-woman-technologist/> Famous ts-sql
 
 SQL engine based on TS type system.
 <LinkToPlaygroundInline href="https://tsplay.dev/lWY33N" />
 
 Heavy uses Template Literal Types.
+
 
 ---
 layout: fact
@@ -199,14 +201,15 @@ layout: fact
 
 ---
 layout: image-right
-image: 'hasura.png'
+image: hasura.png
 ---
 
-# Hasura solved problem of "magic strings"
+# <twemoji-magic-wand/> Hasura solved problem of "magic strings"
 
 You can read about it on their blog
 
 [hasura.io/blog/how-typescript-template-literal-types-helped-us-with-multiple-database-support/](https://hasura.io/blog/how-typescript-template-literal-types-helped-us-with-multiple-database-support/)
+
 
 ---
 layout: iframe
@@ -218,23 +221,42 @@ layout: image-right
 image: https://github.com/kysely-org/kysely/blob/master/assets/demo.gif?raw=true
 ---
 
-# Or Kysely
+# <twemoji-woman-technologist/> Kysely
 
 The SQL query builder.
 
 [github.com/koskimas/kysely](https://github.com/koskimas/kysely)
 
+
 ---
-layout: iframe-right
-url: https://tsplay.dev/mx8ezm
+layout: two-cols-narrow
 ---
-# Or AnySort
 
-Which will sort arrays by any nested properties
+# <twemoji-link/> Next.js Statically Typed Links
 
-<LinkToPlaygroundInline href="https://tsplay.dev/mx8ezm" />
+Type safe hrefs in app.
 
-[github.com/Lionad-Morotar/Anysort](https://github.com/Lionad-Morotar/Anysort)
+We will get back to it.
+
+::right::
+
+```ts
+import type { Route } from 'next';
+import Link from 'next/link'
+
+// ✅
+<Link href="/about" />
+// ✅
+<Link href="/blog/nextjs" />
+// ✅
+<Link href={`/blog/${slug}`} />
+// ✅
+<Link href={('/blog' + slug) as Route} />
+
+// ❌ TypeScript errors if href is not a valid route
+<Link href="/aboot" />
+```
+
 
 ---
 layout: intro
@@ -613,13 +635,7 @@ type User = {
   ageChanged: (age: number) => void;
 };
 
-type KeyFulfillConstraint<T, TConstraint> = {
-  [OnlyStringKey in {
-    [Key in keyof T]: Key extends TConstraint ? Key : never;
-  }[keyof T]]: T[OnlyStringKey];
-};
-
-type UserHandlers = KeyFulfillConstraint<User, `${string}Changed`>;
+type UserHandlers = Pick<User, `${string}Changed` & keyof User>
 
 const userHandlers: UserHandlers = {
   nameChanged: (name) => {},
@@ -1061,6 +1077,14 @@ Caveats
 layout: quote
 ---
 
+# "We generally recommend that people use <span class="text-teal-700">ahead-of-time generation for large string unions</span>, but this is useful in smaller cases."
+
+from TypeScript documentation
+
+---
+layout: quote
+---
+
 # "When overused, template literals, <span class="text-teal-700">can give your IDE a hard time</span> as they can get quite complex and CPU consuming, <span class="text-teal-700">especially when combined with recursion</span>.
 
 <div v-click>
@@ -1102,6 +1126,7 @@ layout: two-cols
 # Resources
 
 * General about Template Literal Types
+  * https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html
   * https://github.com/ghoullier/awesome-template-literal-types
   * https://effectivetypescript.com/2020/11/05/template-literal-types/
   * https://michalzalecki.com/typescript-template-literal-types/
@@ -1110,10 +1135,13 @@ layout: two-cols
 ::right::
 
 * Examples which you can actually use
+  * https://beta.nextjs.org/docs/configuring/typescript#statically-typed-links
   * https://hasura.io/blog/how-typescript-template-literal-types-helped-us-with-multiple-database-support/
+  * https://github.com/gvergnaud/hotscript
   * https://github.com/Lionad-Morotar/Anysort
   * https://github.com/koskimas/kysely
   * https://github.com/dotansimha/graphql-typed-ast
+  * https://github.com/nanostores/router
   * https://twitter.com/danvdk/status/1301707026507198464
 * Crazy examples
   * https://twitter.com/buildsghost/status/1301976526603206657
