@@ -45,22 +45,18 @@ Template Literal Types first introduced.
 layout: quote
 ---
 
-# "Template literal types is build on <span class="text-teal-700">string literal types</span>, and have the ability to expand into many strings via unions."
+# "Template literal types build on <span class="text-teal-700">string literal types</span>, and have the ability to expand into many strings via unions.
 
-(I think it was in docs)
-
-[#TODO]: <> (find source of this quote)
+[TypeScript docs](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html)
 
 
 ---
 layout: quote
 ---
 
-# "They have the "same" syntax as <span class="text-teal-700">template literal strings in JavaScript</span>, but are used in type positions. "
+# "They have the "same" syntax as <span class="text-teal-700">template literal strings in JavaScript</span>, but are used in type positions."
 
-(Same here - I think it was in docs)
-
-[#TODO]: <> (find source of this quote)
+[TypeScript docs](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html)
 
 
 ---
@@ -758,10 +754,10 @@ We can read components from Template Literal Type, and it is good.
 
 ---
 layout: image-right
-image: 'ari.png'
+image: ari.png
 ---
 
-# ARI
+# <twemoji-judge/> ARI
 
 <span class="text-teal-600 text-bold">A</span>tlassian <span class="text-teal-600">R</span>esource <span class="text-teal-600">I</span>dentifier
 
@@ -771,9 +767,10 @@ It has pattern
 
 `ari:cloud:<resource_owner>:<cloud_id>:<resource_type>/<resource_id>`
 
+
 ---
 
-# ARI as Template Literal Type
+# <twemoji-judge/> ARI as Template Literal Type
 
 ```ts {1-3|5|7-8|all}
 type Resource = 'app' | 'site';
@@ -803,9 +800,10 @@ const mySiteAri: Ari =
 
 </div>
 
+
 ---
 
-# Unpack ARI
+# <twemoji-judge/> Unpack ARI
 
 Get its components.
 
@@ -827,9 +825,10 @@ type OwnerUnpacked = UnpackOwner<Ari>;
 // expected `type OwnerUnpacked = "ecosystem" | "jira" | "confluence"`
 ```
 
+
 ---
 
-# Unpack ARI
+# <twemoji-judge/> Unpack ARI
 
 <LinkToPlayground href="https://tsplay.dev/NB5Mnw" />
 
@@ -877,11 +876,12 @@ type UnpackedAll = UnpackAll<Ari>;
 
 </Scrollable>
 
+
 ---
 layout: two-cols
 ---
 
-# Legacy
+# <twemoji-scroll/> Legacy
 
 <LinkToPlayground href="https://tsplay.dev/mArM4W" />
 
@@ -921,9 +921,10 @@ type Error = {
 };
 ```
 
+
 ---
 
-# Unpacking legacy
+# <twemoji-scroll/> Unpacking legacy
 
 <LinkToPlayground href="https://tsplay.dev/mArM4W" />
 
@@ -974,6 +975,7 @@ const handler = (response: OpResponse) => {
 
 </Scrollable>
 
+
 ---
 layout: two-cols-narrow
 ---
@@ -993,7 +995,7 @@ Those ones `/api/users/:userId/posts/:postId`
 
 ---
 
-# Have you missed express?
+# <twemoji-link/> Have you missed express?
 
 Handle paths
 
@@ -1115,13 +1117,14 @@ layout: two-cols
 layout: section
 ---
 
-# Hitting the limits
+# <twemoji-raised-hand/> Hitting the limits
 
 OFC sky is the limit 😜
 
+
 ---
 
-# Revisit Configuration example
+# <twemoji-key/> Revisit Configuration example
 
 ```ts {1-4|6-10}
 type Configuration = {
@@ -1151,9 +1154,10 @@ type ComputeRange<
 
 </div>
 
+
 ---
 
-# Revisit Configuration example
+# <twemoji-key/> Revisit Configuration example
 
 ```ts {monaco}
 type ComputeRange<
@@ -1176,6 +1180,7 @@ Caveats
 
 * Limit is 100 000 combinations
 * Types calculation becomes very CPU consuming
+
 
 ---
 layout: quote
