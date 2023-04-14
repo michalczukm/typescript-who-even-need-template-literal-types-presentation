@@ -208,13 +208,11 @@ image: hasura.png
 
 You can read about it on their blog
 
+<LinkToPlayground href="https://tsplay.dev/WzPgQN" />
+
+
 [hasura.io/blog/how-typescript-template-literal-types-helped-us-with-multiple-database-support/](https://hasura.io/blog/how-typescript-template-literal-types-helped-us-with-multiple-database-support/)
 
-
----
-layout: iframe
-url: https://tsplay.dev/WzPgQN
----
 
 ---
 layout: image-right
@@ -1001,11 +999,67 @@ type ExtractRouteParams<T extends string> =
   ? {[k in Param]: string}
   : {};
 
-type PostParams = ExtractRouteParams<'/posts/:postId'>;
+type PostParams = ExtractRouteParams<'/posts/:postId/comments/:commentId'>;
 
 const endpointUrl = '/posts/:postId/:commentId' as const
 type CommentInPostParams = ExtractRouteParams<typeof endpointUrl>;
 ```
+
+
+---
+layout: two-cols-narrow
+---
+
+# <twemoji-books/> OFC there is library
+
+Which helps you build such patterns.
+
+<div v-click=3>
+
+```ts
+// Result:
+type params = {
+  postId: string;
+  commentId: number;
+}
+```
+
+</div>
+
+::right::
+
+<Scrollable>
+
+```ts {1|3|5-}
+import { Pipe, Objects, Strings, ComposeLeft, Tuples, Match } from "hotscript";
+
+const route = "/posts/<postId:string>/comments/<commentId:number>" as const;
+
+type params = Pipe<
+  typeof route,
+  [
+    Strings.Split<"/">,
+    Tuples.Filter<Strings.StartsWith<"<">>,
+    Tuples.Map<
+      ComposeLeft<[
+        Strings.Trim<"<" | ">">,
+        Strings.Split<":">,
+      ]>
+    >,
+    Tuples.ToUnion,
+    Objects.FromEntries,
+    Objects.MapValues<
+      Match<[
+        Match.With<"string", string>,
+        Match.With<"number", number>
+      ]>
+    >
+  ]
+>;
+```
+
+</Scrollable>
+
 
 ---
 layout: section
