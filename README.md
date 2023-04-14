@@ -19,7 +19,7 @@ Should be available soon.
 
 ## Presentation
 
-[Check it online - click](https://michalczukm.github.io/typescript-who-even-need-template-literal-types-presentation/)
+[Check it online - click](https://typescript-who-even-need-template-literal-types-presentation.vercel.app/)
 
 ## About me
 
