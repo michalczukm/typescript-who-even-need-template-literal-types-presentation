@@ -460,7 +460,7 @@ Since TS v.4.5
 
 ::right::
 
-<div class="flex flex-col justify-center gap-10 mx-20">
+<div class="flex flex-col justify-center gap-10">
 <div v-click>
 
 ```ts {monaco}
@@ -482,6 +482,22 @@ const makeSuccessTyped = (
 ```
 
 </div>
+
+<div v-click>
+
+```ts {monaco}
+// with TS 5.0 const type parameters
+const makeSuccessTyped = <const T extends string>(
+  operation: T
+): `${T}Success` => {
+  return `${operation}Success`;
+};
+
+const result = makeSuccessTyped("IO")
+```
+
+</div>
+
 </div>
 
 
