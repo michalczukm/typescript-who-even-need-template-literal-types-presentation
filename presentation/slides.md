@@ -260,21 +260,13 @@ import Link from 'next/link'
 layout: intro
 ---
 
-# Michał Michalczuk
-
-<div grid="~ cols-2 gap-4">
+# <img class="inline-block w-25 -mt-3 rounded-full" src="/michalczukm.png" alt="michalczukm" width="200"/> Michał Michalczuk 
 
 <div>
 
 Senior Software Engineer @ [Tektit Consulting](https://www.tektitconsulting.com/")
 
 Talking head @ [Śniadanie z Programowaniem](https://www.youtube.com/c/%C5%9AniadaniezProgramowaniem)
-
-</div>
-
-<div v-click>
-  <Youtube id="VWyPm_T1htk" />
-</div>
 
 </div>
 
