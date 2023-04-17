@@ -1272,7 +1272,8 @@ Drop message
   <img class="w-25 rounded-full" src="/michalczukm.png" alt="michalczukm" />
   <div class="flex flex-col gap-5">
     <span><a href="https://michalczukm.xyz/" target="_blank">michalczukm.xyz</a></span>
-    <span><a href="https://twitter.com/michalczukm" target="_blank">@michalczukm</a></span>
+    <span><a href="https://discord.gg/MRakNtCuJJ" target="_blank"><skill-icons-discord/> Śniadanie z Programowaniem</a></span>
+    <span><a href="https://twitter.com/michalczukm" target="_blank"><logos-twitter/> @michalczukm</a></span>
   </div>
 </div>
 

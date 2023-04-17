@@ -16,6 +16,7 @@
   "devDependencies": {
     "@angular/core": "^15.2.7",
     "@iconify-json/logos": "^1.1.24",
+    "@iconify-json/skill-icons": "^1.1.2",
     "@iconify-json/twemoji": "^1.1.11",
     "@iconify-json/uim": "^1.1.5",
     "@types/react": "^18.0.35"
