@@ -70,7 +70,7 @@ First announcement
 
 # <twemoji-nail-polish/> Tailwind case
 
-<LinkToPlayground :href="'https://example.com'" />
+<LinkToPlayground href="https://tsplay.dev/NllZeN" />
 
 ```ts {monaco}
 type BaseColor = 'gray' | 'red' | 'yellow' | 'green';
@@ -504,7 +504,7 @@ layout: two-cols
 
 # <logos-angular-icon/> Did you missed Angular?
 
-```ts {3-8|9-12|all}
+```ts {3-8|9-12}
 declare interface EventEmitter<T> {}
 
 type User = {
@@ -696,7 +696,7 @@ type PatientEntity = {
   id: string;
   name: string;
   birthDateUtc: Date;
-  sex: 'Female' | 'Male';
+  sex: 'Female' | 'Male' | 'other';
 };
 
 type ChangeLog<T> = {
@@ -732,6 +732,14 @@ type ChangeLog<T> = {
 };
 
 type PatientChangeLog = ChangeLog<PatientEntity>;
+
+//
+//
+//
+//
+//
+//
+//
 
 const patientLog: ChangeLog<PatientEntity> = {
   id: 'fed5ea5b-f7e5-4e5a-a21f-4094f98dbfad',
@@ -772,7 +780,7 @@ It has pattern
 
 # <twemoji-judge/> ARI as Template Literal Type
 
-```ts {1-3|5|7-8|all}
+```ts {1-3|5|7-8}
 type Resource = 'app' | 'site';
 type Owner = 'ecosystem' | 'jira' | 'confluence';
 type Environment = 'cloud' | 'server';
@@ -783,9 +791,9 @@ const mySiteAri: Ari =
   'ari:cloud:ecosystem::site/406d303d-0393-4ec4-ad7c-1435be94583a';
 ```
 
-<div v-click>
+---
 
-Play with it
+# <twemoji-judge/> ARI as Template Literal Type
 
 ```ts {monaco}
 type Resource = 'app' | 'site';
@@ -797,9 +805,6 @@ type Ari = `ari:${Environment}:${Owner}::${Resource}/${string}`;
 const mySiteAri: Ari =
   'ari:cloud:ecosystem::site/406d303d-0393-4ec4-ad7c-1435be94583a';
 ```
-
-</div>
-
 
 ---
 
@@ -825,7 +830,6 @@ type OwnerUnpacked = UnpackOwner<Ari>;
 // expected `type OwnerUnpacked = "ecosystem" | "jira" | "confluence"`
 ```
 
-
 ---
 
 # <twemoji-judge/> Unpack ARI
@@ -842,6 +846,15 @@ type Environment = 'cloud' | 'server';
 type Ari = `ari:${Environment}:${Owner}::${Resource}/${string}`;
 
 // ---------- Unpacking ARI -------------------------------------------------------
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 type UnpackEnvironment<T> = T extends `ari:${infer TEnvironment}:${string}`
   ? TEnvironment
@@ -872,6 +885,9 @@ type UnpackAll<T> =
     ? { environment: TEnvironment; owner: TOwner; resource: TResource }
     : never;
 type UnpackedAll = UnpackAll<Ari>;
+
+//
+//
 ```
 
 </Scrollable>
@@ -902,12 +918,15 @@ type Success = {
 
 ::right::
 
+
 <br/>
 <br/>
 <br/>
 <br/>
 <br/>
-<br/>
+<div v-click>
+Imagine that you have such types, but you'd like to get `type` of operation.
+</div>
 <br/>
 
 ```ts
@@ -924,14 +943,14 @@ type Error = {
 
 ---
 
-# <twemoji-scroll/> Unpacking legacy
+# <twemoji-scroll/> Unpacking legacy - get type
 
 <LinkToPlayground href="https://tsplay.dev/mArM4W" />
 
 <Scrollable>
 
 ```ts {monaco}
-type OpSuccess = {
+type Success = {
   type: 
     | 'HttpSuccess' 
     | 'PipeSuccess' 
@@ -940,7 +959,7 @@ type OpSuccess = {
   body: string;
 };
 
-type OpError = {
+type Failure = {
   type: 
     | 'HttpError' 
     | 'PipeError' 
@@ -949,28 +968,13 @@ type OpError = {
   message: string;
 };
 
-type OpResponse = OpSuccess | OpError;
+type Result = Success | Failure;
 
-type OperationType = OpResponse['type'] extends `${infer R}${
+type OperationType = Result['type'] extends `${infer R}${
       | 'Success'
       | 'Error'}`
     ? R
     : never;
-
-const handler = (response: OpResponse) => {
-  
-  if (response.type === 'HttpSuccess') {
-    response.body;
-  }
-
-  if (response.type === 'FileSuccess') {
-    response.body;
-  }
-
-  if (response.type === 'GreatSuccess') {
-    return response.body;
-  }
-};
 ```
 
 </Scrollable>
