@@ -691,6 +691,8 @@ layout: center
 
 # <twemoji-health-worker/> Change log in types
 
+<LinkToPlayground href="https://tsplay.dev/wR0QXm" />
+
 ```ts {1-6|8-12|13|16}
 type PatientEntity = {
   id: string;
@@ -714,6 +716,10 @@ type PatientChangeLog = ChangeLog<PatientEntity>;
 ---
 
 # <twemoji-health-worker/> Change log in types
+
+<LinkToPlayground href="https://tsplay.dev/wR0QXm" />
+
+<Scrollable>
 
 ```ts {monaco}
 type PatientEntity = {
@@ -750,6 +756,7 @@ const patientLog: ChangeLog<PatientEntity> = {
 };
 ```
 
+</Scrollable>
 
 ---
 layout: section
@@ -809,6 +816,8 @@ const mySiteAri: Ari =
 ---
 
 # <twemoji-judge/> Unpack ARI
+
+<LinkToPlayground href="https://tsplay.dev/NB5Mnw" />
 
 Get its components.
 
