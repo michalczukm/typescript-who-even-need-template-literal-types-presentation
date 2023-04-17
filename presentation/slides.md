@@ -1114,6 +1114,18 @@ layout: two-cols
 </div>
 
 ---
+
+<div>
+  <figure class="flex flex-col flex-1 items-center gap-10">
+    <img src="/hasura-autocomplete-meme.png" style="height: 400px;width: fit-content;" />
+    <figcaption class="m-2">
+      <a href="https://hasura.io/blog/how-typescript-template-literal-types-helped-us-with-multiple-database-support/" target="_blank">https://hasura.io/blog/how-typescript-template-literal-types-helped-us-with-multiple-database-support/</a>
+    </figcaption>
+  </figure>
+</div>
+
+
+---
 layout: section
 ---
 
