@@ -1230,6 +1230,25 @@ layout: quote
 from https://michalzalecki.com/typescript-template-literal-types/
 
 ---
+
+# <twemoji-speedboat/> Appendix
+
+During one of the presentations I got a question about tracing compiler operations and measuring its performance.
+
+**A:** You can do it! There are even ready to use tools from TypeScript team - [@typescript/analyze-trace`](https://www.npmjs.com/package/@typescript/analyze-trace)
+
+More info on that:
+
+* https://github.com/microsoft/TypeScript/wiki/Performance#performance-tracing
+* https://github.com/microsoft/TypeScript/wiki/Performance-Tracing
+
+[This article](https://dev.to/nicklucas/typescript-runtime-validators-and-dx-a-type-checking-performance-analysis-of-zodsuperstructyuptypebox-5416) compares runtime validators performance.
+
+You will find there great example of `@typescript/analyze-trace` usage.
+
+For checking the traces you can use [ui.perfetto.dev](https://ui.perfetto.dev/)
+
+---
 layout: fact
 ---
 
