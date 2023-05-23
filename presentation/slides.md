@@ -262,6 +262,8 @@ layout: intro
 
 Senior Software Engineer @ [Tektit Consulting](https://www.tektitconsulting.com/")
 
+Talking head @ [Z Archiwum IT](https://open.spotify.com/show/7keYNEayM3Qk7yDHSpPP6v)
+
 Talking head @ [Śniadanie z Programowaniem](https://www.youtube.com/c/%C5%9AniadaniezProgramowaniem)
 
 </div>
@@ -754,6 +756,14 @@ const patientLog: ChangeLog<PatientEntity> = {
   name_old: false, // <-- won't compile
   birthDateUtc_old: new Date(),
 };
+
+//
+//
+//
+//
+//
+//
+
 ```
 
 </Scrollable>
@@ -868,12 +878,14 @@ type Ari = `ari:${Environment}:${Owner}::${Resource}/${string}`;
 type UnpackEnvironment<T> = T extends `ari:${infer TEnvironment}:${string}`
   ? TEnvironment
   : never;
+
 type EnvironmentUnpacked = UnpackEnvironment<Ari>;
 
 
 type UnpackOwner<T> = T extends `ari:${string}:${infer TOwner}:${string}`
   ? TOwner
   : never;
+
 type OwnerUnpacked = UnpackOwner<Ari>;
 
 
@@ -881,18 +893,21 @@ type UnpackResource<T> =
   T extends `ari:${string}:${string}::${infer TResource}/${string}`
     ? TResource
     : never;
+
 type ResourceUnpacked = UnpackResource<Ari>;
 
 type UnpackResourceId<T> =
   T extends `ari:${string}:${string}::${string}/${infer TResource}`
     ? TResource
     : never;
+
 type ResourceIdUnpacked = UnpackResourceId<Ari>;
 
 type UnpackAll<T> =
   T extends `ari:${infer TEnvironment}:${infer TOwner}::${infer TResource}/${string}`
     ? { environment: TEnvironment; owner: TOwner; resource: TResource }
     : never;
+
 type UnpackedAll = UnpackAll<Ari>;
 
 //
@@ -901,6 +916,32 @@ type UnpackedAll = UnpackAll<Ari>;
 
 </Scrollable>
 
+---
+
+# <twemoji-judge/> But why?
+
+<LinkToPlayground href="https://tsplay.dev/NB5Mnw" />
+
+## We might not own this code
+
+It might be detail of external library.
+
+```ts
+type Ari = `ari:${Environment}:${Owner}::${Resource}/${string}`;
+```
+
+<div class="mt-10" v-click>
+But we'd like to use its components.
+
+```ts {all}
+type UnpackEnvironment<T> = T extends `ari:${infer TEnvironment}:${string}`
+  ? TEnvironment
+  : never;
+
+type EnvironmentUnpacked = UnpackEnvironment<Ari>;
+// expected `type EnvironmentUnpacked = "cloud" | "server"`
+```
+</div>
 
 ---
 layout: two-cols
@@ -979,11 +1020,16 @@ type Failure = {
 
 type Result = Success | Failure;
 
-type OperationType = Result['type'] extends `${infer R}${
+type OperationType = Result['type'] extends `${infer TType}${
       | 'Success'
       | 'Error'}`
-    ? R
+    ? TType
     : never;
+
+//
+//
+//
+//
 ```
 
 </Scrollable>
@@ -1111,6 +1157,14 @@ const nextConfig = {
 
 More info in [<logos-nextjs-icon/> docs](https://beta.nextjs.org/docs/configuring/typescript#statically-typed-links)
 
+<hr />
+
+My file structure matches the pattern
+
+```
+/posts/:postId/comments/:commentId
+```
+
 ---
 layout: two-cols
 ---
@@ -1215,6 +1269,11 @@ layout: quote
 
 from TypeScript documentation
 
+<br/>
+<br/>
+
+<p class="text-sm text-green-500">Next.js statically typed links are generated at build time for a reason!</p>
+
 ---
 layout: quote
 ---
@@ -1315,9 +1374,10 @@ Drop message
 <div class="my-15 flex items-center gap-5">
   <img class="w-25 rounded-full" src="/michalczukm.png" alt="michalczukm" />
   <div class="flex flex-col gap-5">
-    <span><a href="https://michalczukm.xyz/" target="_blank">michalczukm.xyz</a></span>
+    <span><a href="https://www.instagram.com/michalczuk_michal" target="_blank"><skill-icons-instagram/> @michalczuk_michal</a></span>
     <span><a href="https://discord.gg/MRakNtCuJJ" target="_blank"><skill-icons-discord/> Śniadanie z Programowaniem</a></span>
     <span><a href="https://twitter.com/michalczukm" target="_blank"><logos-twitter/> @michalczukm</a></span>
+    <span><a href="https://michalczukm.xyz/" target="_blank">michalczukm.xyz</a></span>
   </div>
 </div>
 
