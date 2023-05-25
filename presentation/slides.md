@@ -413,15 +413,15 @@ interface Error {
 };
 
 const handler = (response: Success | Error) => {
-  if (response.type === '*Success') {
-    response.body;
-  }
-
   if (response.type === 'HttpSuccess') {
     response.body;
   }
 
   if (response.type === 'FileSuccess') {
+    response.body;
+  }
+
+  if (response.type === '*Success') {
     response.body;
   }
 
@@ -495,7 +495,7 @@ const result = makeSuccessTyped("IO")
 layout: section
 ---
 
-# <twemoji-face-with-monocle/> What about maped types?
+# <twemoji-face-with-monocle/> What about mapped types?
 
 Here goes the fun part!
 
