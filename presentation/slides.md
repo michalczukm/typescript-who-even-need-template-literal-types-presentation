@@ -387,7 +387,7 @@ interface Success {
   body: string;
 };
 
-interface Error {
+interface Failure {
   type: `${string}Error`;
   message: string;
 };
@@ -407,12 +407,12 @@ interface Success {
   body: string;
 };
 
-interface Error {
+interface Failure {
   type: `${string}Error`;
   message: string;
 };
 
-const handler = (response: Success | Error) => {
+const handler = (response: Success | Failure) => {
   if (response.type === 'HttpSuccess') {
     response.body;
   }
@@ -980,7 +980,7 @@ Imagine that you have such types, but you'd like to get `type` of operation.
 <br/>
 
 ```ts
-type Error = {
+type Failure = {
   type: 
     | 'HttpError' 
     | 'PipeError' 
@@ -1087,7 +1087,7 @@ Which helps you build such patterns.
 
 ```ts
 // Result:
-type params = {
+type Params = {
   postId: string;
   commentId: number;
 }
@@ -1104,7 +1104,7 @@ import { Pipe, Objects, Strings, ComposeLeft, Tuples, Match } from "hotscript";
 
 const route = "/posts/<postId:string>/comments/<commentId:number>" as const;
 
-type params = Pipe<
+type Params = Pipe<
   typeof route,
   [
     Strings.Split<"/">,
