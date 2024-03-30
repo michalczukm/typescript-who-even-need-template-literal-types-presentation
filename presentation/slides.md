@@ -1144,12 +1144,11 @@ layout: image-right
 image: next-dir.png
 ---
 
-# <logos-nextjs-icon/> Config and app
+# <logos-nextjs-icon/> Config and app (App Router)
 
 ```ts
 const nextConfig = {
   experimental: {
-    appDir: true,
     typedRoutes: true,
   },
 }
