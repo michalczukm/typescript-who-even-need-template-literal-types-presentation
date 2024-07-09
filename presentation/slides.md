@@ -262,9 +262,10 @@ layout: intro
 
 Senior Software Engineer @ [Tektit Consulting](https://www.tektitconsulting.com/")
 
-Talking head @ [Z Archiwum IT](https://open.spotify.com/show/7keYNEayM3Qk7yDHSpPP6v)
-
-Talking head @ [Śniadanie z Programowaniem](https://www.youtube.com/c/%C5%9AniadaniezProgramowaniem)
+Talking head @ JustJoinIT
+- [Z Archiwum IT](https://open.spotify.com/show/7keYNEayM3Qk7yDHSpPP6v)
+- [Śniadanie z Programowaniem](https://www.youtube.com/c/%C5%9AniadaniezProgramowaniem)
+- [TechNews & Blues](https://www.youtube.com/c/%C5%9AniadaniezProgramowaniem)
 
 </div>
 
@@ -951,7 +952,9 @@ layout: two-cols
 
 <LinkToPlayground href="https://tsplay.dev/mArM4W" />
 
-TypeScript has 10 years.
+TypeScript has 11 years 😮
+
+**1st public release: 1.10.2012**
 
 There are lot of legacy patterns.
 
@@ -1374,8 +1377,6 @@ Drop message
   <img class="w-25 rounded-full" src="/michalczukm.png" alt="michalczukm" />
   <div class="flex flex-col gap-5">
     <span><a href="https://www.instagram.com/michalczuk_michal" target="_blank"><skill-icons-instagram/> @michalczuk_michal</a></span>
-    <span><a href="https://discord.gg/MRakNtCuJJ" target="_blank"><skill-icons-discord/> Śniadanie z Programowaniem</a></span>
-    <span><a href="https://twitter.com/michalczukm" target="_blank"><logos-twitter/> @michalczukm</a></span>
     <span><a href="https://michalczukm.xyz/" target="_blank">michalczukm.xyz</a></span>
   </div>
 </div>
