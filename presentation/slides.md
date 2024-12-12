@@ -267,6 +267,13 @@ Talking head @ JustJoinIT
 - [Śniadanie z Programowaniem](https://www.youtube.com/c/%C5%9AniadaniezProgramowaniem)
 - [TechNews & Blues](https://www.youtube.com/c/%C5%9AniadaniezProgramowaniem)
 
+IT Workshops
+- TypeScript
+- Testing in TS/JS
+- Node.js
+
+More: [michalczukm.xyz](https://michalczukm.xyz)
+
 </div>
 
 ---
@@ -701,7 +708,7 @@ type PatientEntity = {
   id: string;
   name: string;
   birthDateUtc: Date;
-  sex: 'Female' | 'Male' | 'other';
+  sex: 'Female' | 'Male' | 'no disclosure';
 };
 
 type ChangeLog<T> = {
@@ -709,7 +716,7 @@ type ChangeLog<T> = {
   entityId: string;
   createdDateUtc: Date;
 } & {
-  [K in keyof T as `${string & K}_${'old' | 'new'}`]?: T[K];
+  [K in Exclude<keyof T, "id"> as `${string & K}_${'old' | 'new'}`]?: T[K];
 };
 
 type PatientChangeLog = ChangeLog<PatientEntity>;
@@ -952,7 +959,7 @@ layout: two-cols
 
 <LinkToPlayground href="https://tsplay.dev/mArM4W" />
 
-TypeScript has 11 years 😮
+TypeScript has 12 years 😮
 
 **1st public release: 1.10.2012**
 
@@ -1376,8 +1383,8 @@ Drop message
 <div class="my-15 flex items-center gap-5">
   <img class="w-25 rounded-full" src="/michalczukm.png" alt="michalczukm" />
   <div class="flex flex-col gap-5">
-    <span><a href="https://www.instagram.com/michalczuk_michal" target="_blank"><skill-icons-instagram/> @michalczuk_michal</a></span>
     <span><a href="https://michalczukm.xyz/" target="_blank">michalczukm.xyz</a></span>
+    <span><a href="https://www.linkedin.com/in/michalczukm/" target="_blank"><skill-icons-linkedin/> Michał Michalczuk</a></span>
   </div>
 </div>
 
